@@ -7,7 +7,7 @@ app = Flask(__name__, instance_relative_config=True)
 def helow_world():
     return 'Please use GET /api/v1/{INT}'
 
-@app.route('/api/v1/<int:number>', methods=['GET'] )
+@app.route('/api/v1/<int(signed=True):number>', methods=['GET'] )
 def find_multiples(number):
     result = ''
     if (number % 7) == 0: 
